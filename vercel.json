@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/GNADENTAL/$1" }
+    { "source": "/(.*)", "destination": "/gnadental/$1" }
   ]
 }
