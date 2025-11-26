@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnathos Dental - India's #1 Dental Care Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0A2E5C;
+            --accent-blue: #1E5EAF;
+            --light-blue: #E8F2FF;
+            --trust-gold: #FFB800;
+            --success-green: #10B981;
+            --white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
+            --gradient-blue: linear-gradient(135deg, #0A2E5C 0%, #1E5EAF 100%);
+            --gradient-light: linear-gradient(135deg, #E8F2FF 0%, #FFFFFF 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+           
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--gradient-blue);
+            color: var(--white);
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .trust-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(30, 94, 175, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(30, 94, 175, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--success-green);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .cta-call-btn {
+            background: var(--trust-gold) !important;
+            color: var(--primary-blue) !important;
+        }
+        
+        .btn svg {
+            margin-right: 8px;
+        }
+
+        /* Hero Section with Background */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 46, 92, 0.95) 0%, rgba(30, 94, 175, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80') center/cover;
+            padding: 60px 0 60px;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--trust-gold);
+            color: var(--primary-blue);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 24px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.6;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 18px 48px;
+            font-size: 16px;
+        }
+
+        /* Trust Badges Section */
+        .trust-badges {
+            padding: 20px 0;
+            background: var(--white);
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge-item {
+            text-align: center;
+            padding: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .badge-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 36px;
+        }
+
+        .badge-item h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #f0f6ff 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-bar::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(30, 94, 175, 0.1) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            border-radius: 50%;
+        }
+        
+        .stats-bar::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 184, 0, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        /* Collage Section - Compact & Improved */
+        .collage-section {
+            padding: 60px 0;
+            background: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--accent-blue);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .results-title {
+            font-size: 38px !important;
+            font-weight: 600 !important;
+            color: var(--primary-blue) !important;
+            margin-bottom: 16px !important;
+            line-height: 1.3 !important;
+            max-width: 600px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .results-description {
+            font-size: 17px !important;
+            color: var(--text-gray) !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            line-height: 1.6 !important;
+            font-weight: 400 !important;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .collage-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Single Collage Image */
+        .single-collage-container {
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .collage-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Results Section - Slider */
+        .results-section {
+            padding: 60px 0;
+            background: var(--gradient-light);
+            position: relative;
+        }
+        
+        .results-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="triangles" width="80" height="80" patternUnits="userSpaceOnUse"><polygon points="40,10 70,60 10,60" fill="none" stroke="%23E8F2FF" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23triangles)"/></svg>');
+            pointer-events: none;
+        }
+
+        .results-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        .single-result-image {
+            position: relative;
+            flex: 1;
+            max-width: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .single-result-image:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+        }
+        
+        .single-result-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+        }
+        
+        .result-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+        }
+        
+        .before-label,
+        .after-label {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .before-label {
+            background: rgba(107, 114, 128, 0.95);
+            color: var(--white);
+        }
+        
+        .after-label {
+            background: var(--trust-gold);
+            color: var(--primary-blue);
+        }
+        
+        .before-label:hover,
+        .after-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+
+
+        .result-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .result-image.before .result-label {
+            background: rgba(107, 114, 128, 0.95);
+            color: var(--white);
+        }
+
+        .result-image.after .result-label {
+            background: var(--trust-gold);
+            color: var(--primary-blue);
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--light-blue);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-blue);
+            transition: all 0.4s ease;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .slider-nav:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+            border-color: var(--accent-blue);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 8px 30px rgba(30, 94, 175, 0.3);
+        }
+
+        .slider-nav.prev {
+            left: 30px;
+        }
+
+        .slider-nav.next {
+            right: 30px;
+        }
+
+        /* Slider Dots */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #D1D5DB;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .dot:hover {
+            background: var(--text-gray);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: var(--accent-blue);
+            width: 40px;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(30, 94, 175, 0.3);
+        }
+
+        /* Trust Seal */
+        .trust-seal-section {
+            background: var(--primary-blue);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .trust-seal-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            background: var(--white);
+            padding: 24px 48px;
+            border-radius: 100px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .seal-icon {
+            font-size: 48px;
+        }
+
+        .seal-text h3 {
+            font-size: 28px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .seal-text p {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+        }
+        
+        .services-section .section-header {
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 28px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid var(--light-blue);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(30, 94, 175, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        /* Emergency styling */
+        .emergency-card {
+            border-color: #FEE2E2;
+            background: linear-gradient(135deg, #FEFEFE 0%, #FEF7F7 100%);
+        }
+        
+        .emergency-card:hover {
+            border-color: #F87171;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(248, 113, 113, 0.15);
+        }
+        
+        .emergency-icon {
+            color: #DC2626;
+        }
+        
+        .emergency-card h3 {
+            color: #DC2626;
+        }
+        
+        .emergency-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #F87171;
+        }
+        
+        .emergency-cta-text {
+            font-size: 20px;
+            color: #DC2626;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .emergency-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .emergency-call-btn {
+            background: #DC2626 !important;
+            border-color: #DC2626 !important;
+            animation: pulse-emergency 2s infinite;
+        }
+        
+        @keyframes pulse-emergency {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Comprehensive Services Section */
+       
+        /* Doctors Section */
+        .doctors-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .doctors-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="medical-pattern" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="2" fill="%23E8F2FF" opacity="0.4"/></pattern></defs><rect width="100%" height="100%" fill="url(%23medical-pattern)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .doctor-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .doctor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
+        }
+        
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(30, 94, 175, 0.12);
+        }
+        
+        .doctor-image-container {
+            position: relative;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .doctor-image {
+            width: 90px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .doctor-card:hover .doctor-image {
+            border-color: var(--accent-blue);
+            transform: scale(1.05);
+        }
+        
+        .doctor-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        
+        .experience-badge,
+        .qualification-badge,
+        .role-badge {
+            background: var(--trust-gold);
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(255, 184, 0, 0.3);
+        }
+        
+        .qualification-badge {
+            background: var(--success-green);
+            color: var(--white);
+        }
+        
+        .role-badge {
+            background: var(--accent-blue);
+            color: var(--white);
+        }
+        
+        .doctor-info {
+            text-align: center;
+        }
+        
+        .doctor-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .doctor-degree {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .doctor-specializations {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .specialization-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.4;
+            text-align: left;
+        }
+        
+        .spec-icon {
+            font-size: 16px;
+            width: 24px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .doctors-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(232, 242, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%);
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Contact & Location Section */
+        .contact-location-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--light-blue) 0%, #f8faff 100%);
+            position: relative;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        /* Form Styling */
+        .contact-form-container {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+        
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #FAFBFC;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(30, 94, 175, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        /* Location Info Styling */
+        .location-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .location-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 5px;
+        }
+        
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .address-block,
+        .contact-block,
+        .hours-block {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+        
+        .address-block:hover,
+        .contact-block:hover,
+        .hours-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+        
+        .info-icon {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .info-content p {
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .info-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .info-content a:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Connect Options */
+        .connect-options {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+        }
+        
+        .connect-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .connect-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .connect-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .call-btn {
+            background: var(--gradient-blue);
+            color: var(--white);
+        }
+        
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 94, 175, 0.3);
+        }
+        
+        .whatsapp-btn {
+            background: var(--success-green);
+            color: var(--white);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .email-btn {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border-color: var(--accent-blue);
+        }
+        
+        .email-btn:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .connect-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-blue);
+            padding: 60px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #0A1E3D;
+            color: var(--white);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+        
+        .footer-logo-img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-logo-text {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--trust-gold);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 32px 0;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--trust-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 48px; }
+            .section-title { font-size: 42px; }
+            .stats-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .collage-grid { 
+                grid-template-columns: repeat(6, 1fr); 
+                grid-auto-rows: 150px;
+            }
+            .collage-item:nth-child(n) { grid-column: span 3; grid-row: span 2; }
+            .result-pair { padding: 30px; }
+            
+            /* Comprehensive services tablet */
+            .comprehensive-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .comprehensive-services {
+                padding: 80px 0;
+            }
+        }
+
+        /* Responsive slider visibility */
+        .desktop-slide {
+            display: flex;
+        }
+        
+        .tablet-slide {
+            display: none;
+        }
+        
+        .mobile-slide {
+            display: none;
+        }
+        
+        @media (max-width: 1024px) {
+            .desktop-slide {
+                display: none;
+            }
+            
+            .tablet-slide {
+                display: flex;
+            }
+            
+            .single-result-image {
+                max-width: 450px;
+            }
+            
+            .section-title { font-size: 36px; }
+            
+            .results-title {
+                font-size: 32px !important;
+            }
+            
+            .hero h1 { font-size: 42px; }
+            .hero p { font-size: 18px; }
+            
+            .header-buttons {
+                gap: 8px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 80px;
+                min-height: 70vh;
+            }
+            
+            .hero h1 { 
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+            
+            .btn-large {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .section-title { font-size: 28px; }
+            
+            .stats-grid, .services-grid { 
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            /* Comprehensive services mobile */
+            .comprehensive-services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .comprehensive-services {
+                padding: 60px 0;
+            }
+            
+            .service-image-container {
+                height: 180px;
+            }
+            
+            .service-content {
+                padding: 25px 20px;
+            }
+            
+            .service-title {
+                font-size: 20px;
+            }
+            
+            .service-description {
+                font-size: 14px;
+            }
+            
+            .service-feature {
+                font-size: 12px;
+            }
+            
+            .collage-image { 
+                border-radius: 16px;
+                max-width: 95%;
+            }
+            
+            .trust-badges {
+                padding: 60px 0;
+            }
+            
+            .badges-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .badge-item {
+                padding: 15px;
+            }
+            
+            .badge-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+            
+            .stats-bar {
+                padding: 60px 0;
+            }
+            
+            .stat-item h3 {
+                font-size: 36px;
+            }
+            
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .service-icon {
+                font-size: 36px;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            
+            /* Mobile slider behavior */
+            .desktop-slide,
+            .tablet-slide {
+                display: none;
+            }
+            
+            .mobile-slide {
+                display: flex;
+            }
+            
+            .single-result-image {
+                max-width: 100%;
+                border-radius: 16px;
+            }
+            
+            .result-overlay {
+                padding: 20px 15px;
+            }
+            
+            .before-label,
+            .after-label {
+                padding: 10px 20px;
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+            
+            .slider-nav { 
+                width: 45px; 
+                height: 45px; 
+                font-size: 22px; 
+            }
+            .slider-nav.prev { left: 15px; }
+            .slider-nav.next { right: 15px; }
+            
+            .results-title {
+                font-size: 28px !important;
+            }
+            
+            .results-description {
+                font-size: 15px !important;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+            
+            .logo-img {
+                height: 35px;
+            }
+            
+            /* Contact section mobile */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .contact-form-container {
+                padding: 30px 25px;
+            }
+            
+            .form-title,
+            .location-title {
+                font-size: 20px;
+            }
+            
+            .connect-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .location-details {
+                gap: 15px;
+            }
+            
+            .address-block,
+            .contact-block {
+                padding: 15px;
+            }
+            
+            .trust-bar {
+                padding: 8px 0;
+                font-size: 12px;
+            }
+            
+            .trust-bar span {
+                display: block;
+                text-align: center;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .header-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .results-section,
+            .collage-section,
+            .services-section {
+                padding: 60px 0;
+            }
+            
+            .contact-location-section {
+                padding: 60px 0;
+            }
+            
+            /* Doctors section mobile */
+            .doctors-section {
+                padding: 60px 0;
+            }
+            
+            .doctors-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .doctor-card {
+                padding: 25px 20px;
+            }
+            
+            .doctor-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .doctor-name {
+                font-size: 20px;
+            }
+            
+            .specialization-item {
+                font-size: 13px;
+            }
+            
+            .doctors-cta {
+                margin-top: 40px;
+                padding: 30px 20px;
+            }
+            
+            .cta-text {
+                font-size: 16px;
+            }
+            
+            /* Emergency section mobile */
+            .emergency-cta {
+                margin-top: 40px;
+                padding: 30px 20px;
+            }
+            
+            .emergency-cta-text {
+                font-size: 18px;
+            }
+            
+            .emergency-buttons {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .emergency-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .contact-grid {
+                gap: 50px;
+            }
+            
+            .contact-form-container {
+                padding: 45px 35px;
+            }
+            
+            /* Doctors section tablet */
+            .doctors-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .doctor-card {
+                padding: 25px;
+            }
+            
+            .doctor-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .dent-container-unik {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Services Section */
+.dent-services-section-unik {
+    padding: 80px 0;
+    background: #F5F5F5;
+}
+
+.dent-price-guarantee-unik {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dent-price-guarantee-unik h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.dent-guaranteed-text-unik {
+    color: #FFA500;
+}
+
+.dent-lowest-text-unik {
+    color: #000;
+}
+
+.dent-price-badge-unik {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.dent-badge-circle-unik {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FFA500;
+    position: relative;
+}
+
+.dent-badge-circle-unik::before {
+    content: '100%';
+    position: absolute;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #FFA500;
+}
+
+.dent-badge-circle-unik::after {
+    content: 'LOWEST\\APRICE';
+    white-space: pre;
+    position: absolute;
+    bottom: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.dent-services-grid-unik {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.dent-service-card-unik {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.dent-service-card-unik:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.dent-service-image-unik {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #E8F2FF 0%, #D4E4F7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.dent-service-image-unik img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dent-service-info-unik h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dent-discount-badge-unik {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: #E63946;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.4);
+    z-index: 10;
+    border: 6px solid #FFFFFF;
+}
+
+.dent-percent-unik {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.dent-off-text-unik {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.dent-book-appointment-btn-unik {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFA500;
+    color: #000;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-top: 40px;
+    box-shadow: 0 6px 25px rgba(255, 165, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.dent-book-appointment-btn-unik:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 35px rgba(255, 165, 0, 0.5);
+}
+
+.dent-whatsapp-icon-unik {
+    width: 28px;
+    height: 28px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dent-services-grid-unik {
+        grid-template-columns: 1fr;
+    }
+    .dent-discount-badge-unik {
+        width: 120px;
+        height: 120px;
+    }
+    .dent-percent-unik {
+        font-size: 40px;
+    }
+    .dent-off-text-unik {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dent-service-card-unik {
+        flex-direction: column;
+        text-align: center;
+    }
+    .dent-service-image-unik {
+        width: 120px;
+        height: 120px;
+    }
+    .dent-price-guarantee-unik h2 {
+        font-size: 32px;
+    }
+    .dent-badge-circle-unik {
+        width: 60px;
+        height: 60px;
+    }
+    .dent-discount-badge-unik {
+        position: static;
+        transform: none;
+        margin: 30px auto;
+    }
+    .dent-book-appointment-btn-unik {
+        font-size: 16px;
+        padding: 15px 35px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <span>🏆 India's #1 Rated Dental Clinic | ⚡ 24/7 Emergency Support | 📞 +91 9000666476</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="public/logo.png" alt="Gnathos Dental" class="logo-img">
+                
+            </div>
+            <div class="header-buttons">
+                <a href="tel:+919000666476" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    Call Now
+                </a>
+                <a href="https://wa.me/919000666476" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">✨ Ranked #1 in India</div>
+            <h1>Transform Your Smile<br>With India's Best</h1>
+            <p>Award-winning dental care with lifetime warranty. Advanced technology, expert surgeons, and 100% success rate guaranteed.</p>
+            <div class="hero-buttons">
+                <a href="#book" class="btn btn-primary btn-large">Book Free Consultation</a>
+                <a href="#results" class="btn btn-secondary btn-large">View Results</a>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Emergency Signs</div>
+                <h2 class="section-title">Are You Experiencing Dental Emergency?</h2>
+                <p class="section-description">These signs require immediate dental attention - Contact us now for urgent care</p>
+            </div>
+
+            <div class="services-grid emergency-grid">
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">🔥</div>
+                    <h3>Severe Throbbing Pain</h3>
+                    <p>Intense pain that won't subside with medication</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">🦷</div>
+                    <h3>Broken/Knocked Tooth</h3>
+                    <p>Cracked, chipped, or completely dislodged tooth</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">😰</div>
+                    <h3>Swelling & Infection</h3>
+                    <p>Facial swelling, fever, or pus discharge</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">🩸</div>
+                    <h3>Uncontrolled Bleeding</h3>
+                    <p>Continuous bleeding after injury or extraction</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">⚡</div>
+                    <h3>Abscess Formation</h3>
+                    <p>Painful bump on gums with discharge</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">🔄</div>
+                    <h3>Recurring Pain</h3>
+                    <p>Pain that keeps coming back</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">🌡️</div>
+                    <h3>High Fever</h3>
+                    <p>Fever along with dental pain</p>
+                </div>
+                <div class="service-card emergency-card">
+                    <div class="service-icon emergency-icon">💥</div>
+                    <h3>Jaw Injury</h3>
+                    <p>Trauma or accident affecting jaw/teeth</p>
+                </div>
+            </div>
+            
+            <div class="emergency-cta">
+                <p class="emergency-cta-text">Experiencing any of these symptoms? Don't wait - Get immediate help!</p>
+                <div class="emergency-buttons">
+                    <a href="tel:+919000666476" class="btn btn-primary btn-large emergency-call-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        Emergency Call: +91 9000666476
+                    </a>
+                    <a href="https://wa.me/919000666476" class="btn btn-secondary btn-large">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                        WhatsApp Emergency
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+     <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1M+</h3>
+                    <p>HAPPY SMILES</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15K+</h3>
+                    <p>IMPLANTS DONE</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>COUNTRIES SERVED</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>SUCCESS RATE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+      <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Emergency Signs</div>
+                <h2 class="section-title">Are You Experiencing Dental Emergency?</h2>
+                <p class="section-description">These signs require immediate dental attention - Contact us now for urgent care</p>
+            </div>
+
+           <div class="dent-services-grid-unik">
+            <!-- Dental Implants -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/dental-implants.jpg" alt="Dental Implants" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>Dental Implants</h3>
+                </div>
+            </div>
+
+            <!-- Invisible Aligners -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/invisible-aligners.jpg" alt="Invisible Aligners" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>Invisible Aligners</h3>
+                </div>
+            </div>
+
+            <!-- Teeth Whitening -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/teeth-whitening.jpg" alt="Teeth Whitening" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>Teeth Whitening</h3>
+                </div>
+            </div>
+
+            <!-- Smile Design / Veneers -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/smile-design-veneers.jpg" alt="Smile Design" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>Smile Design / Veneers</h3>
+                </div>
+            </div>
+
+            <!-- TMJ & Orofacial Pain -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/tmj-orofacial-pain.jpg" alt="TMJ Treatment" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>TMJ & Orofacial Pain</h3>
+                </div>
+            </div>
+
+            <!-- Full Mouth Rehabilitation -->
+            <div class="dent-service-card-unik">
+                <div class="dent-service-image-unik">
+                    <img src="public/full-mouth-rehabilitation.jpg" alt="Full Mouth Rehabilitation" />
+                </div>
+                <div class="dent-service-info-unik">
+                    <h3>Full Mouth Rehabilitation</h3>
+                </div>
+            </div>
+
+            <!-- 70% OFF Badge -->
+            <div class="dent-discount-badge-unik">
+                <div class="dent-percent-unik">70%</div>
+                <div class="dent-off-text-unik">OFF</div>
+            </div>
+        </div>
+
+      
+            
+            
+        </div>
+    </section>
+
+
+
+
+     <!-- Collage Section - Compact -->
+    <section class="collage-section">
+        <div class="collage-wrapper">
+            <div class="section-header" style="position: relative; z-index: 1;">
+                <div class="section-subtitle">Our Pride</div>
+                <h2 class="section-title">Over 1 Million+<br>Stunning Smiles</h2>
+                <p class="section-description">Real patients, real results. Join thousands of satisfied patients who trusted us with their smile transformation journey.</p>
+            </div>
+
+            <div class="single-collage-container">
+                <img src="public/Smile-Banner.png" alt="Million Happy Smiles - Patient Success Stories" class="collage-image">
+            </div>
+
+            <a href="#book" class="btn btn-primary btn-large">Join Our Success Stories</a>
+        </div>
+    </section>
+
+
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="badges-grid">
+                <div class="badge-item">
+                    <div class="badge-icon">🏆</div>
+                    <h4>Best Dental Clinic<br>Award 2024</h4>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">⭐</div>
+                    <h4>5-Star Patient<br>Excellence</h4>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">🌟</div>
+                    <h4>Forbes India<br>Recognized</h4>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">✅</div>
+                    <h4>International<br>ISO Certified</h4>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">🎖️</div>
+                    <h4>Lifetime<br>Warranty</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+     
+    <!-- Stats Bar -->
+   
+
+  
+
+    <!-- Results Section - Slider -->
+    <section class="results-section" id="results">
+        <div class="results-container">
+            <div class="section-header">
+                <div class="section-subtitle">Real Transformations</div>
+                <h2 class="section-title results-title">Amazing Before & After Results</h2>
+                <p class="section-description results-description">See the incredible smile transformations from our patients</p>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="slider-nav prev" onclick="moveSlide(-1)">‹</button>
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Desktop Slide 1 - 3 images -->
+                    <div class="slider-item desktop-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb1.webp" alt="Before and After dental transformation - Patient 1">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb2.webp" alt="Before and After dental transformation - Patient 2">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb3.webp" alt="Before and After dental transformation - Patient 3">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Slide 2 - 3 more images -->
+                    <div class="slider-item desktop-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb4.webp" alt="Before and After dental transformation - Patient 4">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb1.webp" alt="Before and After dental transformation - Patient 5">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb2.webp" alt="Before and After dental transformation - Patient 6">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tablet Slides - 2 images each -->
+                    <div class="slider-item tablet-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb1.webp" alt="Before and After dental transformation - Patient 1">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb2.webp" alt="Before and After dental transformation - Patient 2">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item tablet-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb3.webp" alt="Before and After dental transformation - Patient 3">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                        <div class="single-result-image">
+                            <img src="public/fb4.webp" alt="Before and After dental transformation - Patient 4">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Slides - 1 image each -->
+                    <div class="slider-item mobile-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb1.webp" alt="Before and After dental transformation - Patient 1">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item mobile-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb2.webp" alt="Before and After dental transformation - Patient 2">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item mobile-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb3.webp" alt="Before and After dental transformation - Patient 3">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item mobile-slide">
+                        <div class="single-result-image">
+                            <img src="public/fb4.webp" alt="Before and After dental transformation - Patient 4">
+                            <div class="result-overlay">
+                                <span class="before-label">BEFORE</span>
+                                <span class="after-label">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav next" onclick="moveSlide(1)">›</button>
+            </div>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots" id="sliderDots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+    </section>
+
+   
+
+   
+
+    <!-- Doctors Section -->
+    <section class="doctors-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Meet Our Experts</div>
+                <h2 class="section-title">World-Class Dental Specialists</h2>
+                <p class="section-description">Our team of highly qualified and experienced dental professionals is dedicated to providing you with exceptional care</p>
+            </div>
+            
+            <div class="doctors-grid">
+                <!-- Dr. Navatha Mortha -->
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="public/doctor-3.avif" alt="Dr. Navatha Mortha - Oral and Maxillofacial Surgeon" class="doctor-image">
+                       
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Navatha Mortha</h3>
+                        <div class="doctor-degree">MDS Oral and Maxillofacial Surgeon</div>
+                        <!-- <div class="doctor-specializations">
+                            <div class="specialization-item">
+                                <span class="spec-icon">🏥</span>
+                                <span>Specialist in complex emergency procedures</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">🦷</span>
+                                <span>Expert in wisdom tooth extraction & trauma care</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">⚕️</span>
+                                <span>15+ years of surgical experience</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Dr. Suresh PL -->
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="public/suresh.avif" alt="Dr. Suresh PL - Senior Consultant Oral & Maxillofacial Surgeon" class="doctor-image">
+                        
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Suresh PL</h3>
+                        <div class="doctor-degree">MDS, MOMS RCPS (UK)</div>
+                        <!-- <div class="doctor-specializations">
+                            <div class="specialization-item">
+                                <span class="spec-icon">👨‍⚕️</span>
+                                <span>Senior Consultant Oral & Maxillofacial Surgeon</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">🔧</span>
+                                <span>TMJ Specialist</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">🌍</span>
+                                <span>International qualifications</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Dr. Pratyusha -->
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="public/doctor-2.avif" alt="Dr. Pratyusha - Consultant Dental Surgeon" class="doctor-image">
+                        
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Pratyusha</h3>
+                        <div class="doctor-degree">BDS Consultant Dental Surgeon</div>
+                        <!-- <div class="doctor-specializations">
+                            <div class="specialization-item">
+                                <span class="spec-icon">👩‍💼</span>
+                                <span>Clinical Superintendent & Head of Operations</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">🚨</span>
+                                <span>Emergency care coordinator</span>
+                            </div>
+                            <div class="specialization-item">
+                                <span class="spec-icon">❤️</span>
+                                <span>Patient care specialist</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctors-cta">
+                <p class="cta-text">Book a consultation with our expert doctors today</p>
+                <a href="tel:+919000666476" class="btn btn-primary btn-large">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    Schedule Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="contact-location-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Get In Touch</div>
+                <h2 class="section-title">Book Your Consultation</h2>
+                <p class="section-description">Ready to transform your smile? Contact us today for a personalized consultation</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3 class="form-title">Schedule Your Appointment</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="services">Service Interested In</label>
+                            <select id="services" name="services" required>
+                                <option value="">Select a service</option>
+                                <option value="smile-design">Smile Design</option>
+                                <option value="dental-implants">Dental Implants</option>
+                                <option value="invisible-aligners">Invisible Aligners</option>
+                                <option value="laser-dentistry">Laser Dentistry</option>
+                                <option value="zirconia-crowns">Zirconia Crowns</option>
+                                <option value="teeth-whitening">Teeth Whitening</option>
+                                <option value="bone-grafting">Bone Grafting</option>
+                                <option value="root-canal">Microscopic RCT</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Tell us about your concerns or questions"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large form-submit">
+                            📅 Book Consultation
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Location & Contact Info -->
+                <div class="location-info-container">
+                    <h3 class="location-title">Visit Our Clinic</h3>
+                    
+                    <div class="location-details">
+                        <div class="address-block">
+                            <div class="info-icon">📍</div>
+                            <div class="info-content">
+                                <h4>Our Location</h4>
+                                <p>CARE Hospitals<br>
+                                Jayabheri Pine Valley, Road No. 2<br>
+                                Gachibowli, Hi-tech City<br>
+                                Hyderabad - 500032</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-block">
+                            <div class="info-icon">📞</div>
+                            <div class="info-content">
+                                <h4>Contact Details</h4>
+                                <p><a href="tel:+919000666476">+91 9000666476</a><br>
+                                <a href="mailto:gnathosface@gmail.com">gnathosface@gmail.com</a><br>
+                                24/7 Emergency Support</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="connect-options">
+                        <h4 class="connect-title">Connect With Us</h4>
+                        <div class="connect-buttons">
+                            <a href="tel:+919000666476" class="connect-btn call-btn">
+                                <svg class="connect-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                                </svg>
+                                <span class="connect-text">Call Now</span>
+                            </a>
+                            <a href="https://wa.me/919000666476" class="connect-btn whatsapp-btn">
+                                <svg class="connect-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                                </svg>
+                                <span class="connect-text">WhatsApp</span>
+                            </a>
+                            <a href="mailto:gnathosface@gmail.com" class="connect-btn email-btn">
+                                <svg class="connect-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <span class="connect-text">Email Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+  
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="public/logo.png" alt="Gnathos Dental" class="footer-logo-img">
+                
+            </div>
+            <p style="margin-bottom: 24px; opacity: 0.8;">Excellence in Dental & Maxillofacial Care Since 2009</p>
+            <p style="opacity: 0.6; font-size: 14px;">&copy; 2025 Gnathos Dental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        let isDesktop = window.innerWidth > 1024;
+        let isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
+        const track = document.getElementById('sliderTrack');
+        let slides, dots;
+        
+        function initializeSlider() {
+            isDesktop = window.innerWidth > 1024;
+            isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
+            const isMobile = window.innerWidth <= 768;
+            
+            // Get visible slides based on screen size
+            if (isDesktop) {
+                slides = document.querySelectorAll('.slider-item.desktop-slide');
+            } else if (isTablet) {
+                slides = document.querySelectorAll('.slider-item.tablet-slide');
+            } else {
+                slides = document.querySelectorAll('.slider-item.mobile-slide');
+            }
+            
+            // Update dots
+            const dotsContainer = document.getElementById('sliderDots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < slides.length; i++) {
+                const dot = document.createElement('span');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+            
+            dots = document.querySelectorAll('.dot');
+            currentSlide = 0;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Initialize slider on load
+        window.addEventListener('load', initializeSlider);
+        
+        // Reinitialize on window resize
+        window.addEventListener('resize', () => {
+            const wasDesktop = isDesktop;
+            const wasTablet = isTablet;
+            initializeSlider();
+        });
+
+        // Auto-advance slider every 6 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 6000);
+    </script>
+
+</body>
+</html>
